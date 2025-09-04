@@ -2,22 +2,30 @@ body {
     font-family: 'Lato', sans-serif;
     background-color: #fafafa;
     color: #333;
+    margin: 0;
 }
 
+hr {
+    border: none;
+    border-top: 1px solid #cecece;
+    margin: 20px 0;
+}
 /* header */
 .menu-header {
     background-color: #2c3e50;
     color: #fff;
     padding: 48px 0;
-    background-image: url('images/bg.png');    
+    background-image: url('images/bg.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .menu-header .logo {
     max-width: 350px;
-    margin-bottom: 15px;
+    width: 100%;
 }
 
 .menu-header .subtitle {
@@ -29,19 +37,54 @@ body {
 }
 
 /* menú carta*/
-.carta-menu{
+.carta-menu {
     max-width: 1000px;
-    margin: 0 auto -50px auto;
-
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 0;
 }
 
-.carta-menu a{
+.menu-horizontal {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-horizontal li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.menu-link {
     font-family: 'Playfair Display', serif;
     color: #2c3e50;
-    margin-bottom:10px;
-    padding-bottom: 10px;
-    font-size: 26px;
+    text-decoration: none;
+    font-size: 22px;
+    transition: color 0.3s ease;
 }
+
+.realizar-pedido {
+  font-weight: 800;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.realizar-pedido::before {
+  content: "";
+  background-image: url("images/delivery.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 30px;
+  height: 30px;
+  margin-right: 4px;
+  position: relative;
+  top: 1px; 
+}
+
 
 
 /* container principal */
@@ -51,6 +94,7 @@ body {
     padding: 48px;
     border-radius: 8px;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    margin: 30px auto 0;
 }
 
 /* Secciones del menú */
@@ -71,16 +115,25 @@ body {
 .section-title {
     font-family: 'Playfair Display', serif;
     color: #2c3e50;
-    margin-bottom:10px;
+    margin-bottom: 10px;
     padding-bottom: 10px;
     font-weight: 800;
 }
 
 
 /* menu */
-.menu-item {
-    margin-bottom: 48px;
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    width: 100%;
+}
 
+
+
+.menu-item {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .menu-img {
@@ -120,23 +173,25 @@ footer {
     color: #fff;
     font-size: 14px;
     font-weight: 300;
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
 }
 
 .logo-footer {
     max-width: 150px;
 }
 
-.medios-pago img{
-    width: 64px;
-    margin: 0 10px 0 10px;
+.medios-pago {
+    text-align: center;
+    padding: 30px 0;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-/* responsive  */
-@media (max-width: 768px) {
-    .menu-container {
-        padding: 24px;
-    }
-}
+
+
+
 
 /* hover */
 .menu-img:hover {
@@ -145,13 +200,246 @@ footer {
 
 }
 
-.carta-menu a:hover {
+.menu-horizontal li:hover {
+    transition: transform 0.3s ease;
+    transform: scale(1.03);
+}
+
+.menu-link:hover {
     color: #c0392b;
+}
+
+
+.iconos-pago {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.medios-pago img {
+    width: 64px;
+    vertical-align: middle;
+}
+
+.medios-pago img:hover {
     transition: transform 0.3s ease;
     transform: scale(1.05);
 }
 
-.medios-pago img:hover{
-    transition: transform 0.3s ease;
-    transform: scale(1.05);
+/* Formulario de Pedidos */
+.pedidos-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 0;
 }
+
+.formulario-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.formulario-pedido {
+    margin-top: 30px;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.datos-cliente {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: #34495e;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 0px 10px 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
+
+
+
+.radio-options {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+}
+
+.radio-option input[type="radio"] {
+    margin-right: 8px;
+    width: auto;
+    accent-color: #c0392b;
+    cursor: pointer;
+}
+
+.transferencia-info {
+    margin-top: 30px;
+    margin-bottom: 25px;
+    padding: 12px 20px;
+    border-radius: 4px;
+    background-color: #cce5ff;
+    color: #004085;
+    border: 1px solid #b8daff;
+    font-size: 14px;
+    line-height: 1.5;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+.transferencia-info::before {
+    content: url("images/info.png");
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.horario-info {
+    margin-top: 30px;
+    margin-bottom: 25px;
+    padding: 12px 20px;
+    border-radius: 4px;
+
+    color: #004085;
+    border: 1px solid #b8daff;
+    font-size: 16px;
+    line-height: 1.5;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+.horario-info::before {
+    content: url("images/reloj.png");
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+
+.dropdown {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.dropdown summary {
+    padding: 12px;
+    font-weight: 00;
+    cursor: pointer;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+    color: #2c3e50;
+    outline: none;
+}
+
+
+
+.dropdown summary::after {
+    content: '+';
+    float: right;
+    font-weight: bold;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown[open] summary::after {
+    content: '−';
+}
+
+.checkbox-group {
+    padding: 10px;
+}
+
+.checkbox-item {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin-right: 10px;
+    width: auto;
+}
+
+.text-center {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-enviar {
+    background-color: #c0392b;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-enviar:hover {
+    background-color: #a33025;
+}
+
+
+
+/* responsive */
+@media (max-width: 768px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-horizontal {
+        flex-direction: column;
+    }
+
+    .iconos-pago {
+        flex-direction: column;
+    }
+    
+    .checkbox-group {
+        padding: 5px;
+    }
+    
+    .datos-cliente {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .radio-options {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
