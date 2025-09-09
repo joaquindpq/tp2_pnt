@@ -3,7 +3,7 @@ console.log("Prueba script.js cargado correctamente");
 function validarFormularioPedidos(event) {
  
     // Chequear platos seleccionados
-    const platos = document.querySelectorAll('input[name="plato"]:checked');
+    const platos = document.querySelectorAll('input[name="plato[]"]:checked');
     if (platos.length === 0) {
         alert('Por favor, selecciona al menos un plato.');
         return false;
