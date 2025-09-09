@@ -3,14 +3,14 @@ console.log("Prueba script.js cargado correctamente");
 function validarFormularioPedidos(event) {
  
     // Chequear platos seleccionados
-    const platos = document.querySelectorAll('input[name="plato[]"]:checked');
+    var platos = document.querySelectorAll('input[name="plato[]"]:checked');
     if (platos.length === 0) {
         alert('Por favor, selecciona al menos un plato.');
         return false;
     }
 
     // Chequar que no hayan espacios en blanco en los campos obligatorios
-    const camposObligatorios = ['nombre', 'telefono', 'direccion', 'email'];
+    var camposObligatorios = ['nombre', 'telefono', 'direccion', 'email'];
     for (let id of camposObligatorios) {
         const campo = document.getElementById(id);
         if (!campo.value.trim()) {
@@ -21,7 +21,7 @@ function validarFormularioPedidos(event) {
     }
 
     // Chequear formato y longitud del telefono
-    const telefono = document.getElementById('telefono').value.trim();
+    var telefono = document.getElementById('telefono').value.trim();
     if (!/^\d{8,}$/.test(telefono)) {
         alert('El teléfono debe contener solo números y tener al menos 8 dígitos.');
         document.getElementById('telefono').focus();
@@ -35,7 +35,7 @@ function validarFormularioPedidos(event) {
 }
 
 window.onload = function() {
-    const form = document.getElementById('formularioPedido');
+    var form = document.getElementById('formularioPedido');
     if (form) {
         form.onsubmit = validarFormularioPedidos;
     }
